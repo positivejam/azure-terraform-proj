@@ -12,11 +12,11 @@ provider "azurerm" {
   features {}
 }
 variable "app_service_enabled" {
-  type = bool
+  type    = bool
   default = true
 }
 variable "branch_to_deploy" {
-  type = string
+  type    = string
   default = "master"
 }
 # Generate a random integer to create a globally unique name
@@ -45,7 +45,7 @@ resource "azurerm_app_service" "webapp" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   app_service_plan_id = azurerm_app_service_plan.appserviceplan.id
-  enabled = var.app_service_enabled
+  enabled             = var.app_service_enabled
   source_control {
     repo_url           = "https://github.com/positivejam/nodejs-docs-hello-world"
     branch             = var.branch_to_deploy
