@@ -15,6 +15,10 @@ variable "app_service_enabled" {
   type = bool
   default = true
 }
+variable "branch_to_deploy" {
+  type = string
+  default = "master"
+}
 # Generate a random integer to create a globally unique name
 resource "random_integer" "ri" {
   min = 10000
@@ -43,8 +47,8 @@ resource "azurerm_app_service" "webapp" {
   app_service_plan_id = azurerm_app_service_plan.appserviceplan.id
   enabled = var.app_service_enabled
   source_control {
-    repo_url           = "https://github.com/Azure-Samples/nodejs-docs-hello-world"
-    branch             = "master"
+    repo_url           = "https://github.com/positivejam/nodejs-docs-hello-world"
+    branch             = var.branch_to_deploy
     manual_integration = true
     use_mercurial      = false
   }
