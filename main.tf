@@ -51,6 +51,9 @@ resource "azurerm_app_service" "webapp" {
       file_system_level = "Information"
     }
   }
+  app_settings = {
+    "WEBSITE_NODE_DEFAULT_VERSION" = "16.13.0"
+  }
   source_control {
     repo_url           = "https://github.com/positivejam/nodejs-docs-hello-world"
     branch             = var.branch_to_deploy
