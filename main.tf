@@ -46,6 +46,11 @@ resource "azurerm_app_service" "webapp" {
   resource_group_name = azurerm_resource_group.rg.name
   app_service_plan_id = azurerm_app_service_plan.appserviceplan.id
   enabled             = var.app_service_enabled
+  logs {
+    application_logs {
+      file_system_level = "Information"
+    }
+  }
   source_control {
     repo_url           = "https://github.com/positivejam/nodejs-docs-hello-world"
     branch             = var.branch_to_deploy
