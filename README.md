@@ -10,4 +10,4 @@ This repo holds a small file that I wrote in order to learn about automating inf
 6. Lets you send variables to your Terraform plan to start and stop the App Service;
 7. Lets you send variables to your Terraform plan to switch which branch of the app is the currently deployed one;
 
-For reference, I started by using (https://docs.microsoft.com/en-us/azure/app-service/provision-resource-terraform)[these instructions,] and expanded on them from there.
+For reference, I started by using [these instructions,](https://docs.microsoft.com/en-us/azure/app-service/provision-resource-terraform) and expanded on them from there.
